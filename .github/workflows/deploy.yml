@@ -22,4 +22,4 @@ jobs:
         instance-ids: ${{ secrets.INSTANCE_ID  }}
         comment: Deploy the main branch
         working-directory: /home/ubuntu/agoraapi
-        command: / ./deploy.sh
+        command: deploy.sh
