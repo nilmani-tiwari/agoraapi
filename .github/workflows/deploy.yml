@@ -5,10 +5,6 @@ push:
 branches: [master]
 
 jobs:
-start:
-runs-on: ubuntu-latest 
-
-jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
