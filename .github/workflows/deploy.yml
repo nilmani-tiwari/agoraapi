@@ -18,7 +18,7 @@ steps:
 			  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
 			  aws-region: us-east-1
 			  instance-ids: ${{ secrets.INSTANCE_ID  }}
-			  comment: Deploy the master branch
+			  comment: Deploy the main branch
 			  working-directory: /home/ubuntu/agoraapi
 			  command: /bin/sh ./deploy.sh
 			  ```
@@ -34,7 +34,7 @@ steps:
 			  Once this is complete, commit and push the workflow to your repo.
 
 			  ---
-				
+
 ## Setting up your Domain
 
 So far, users can access the site using the Elastic IP. However, it can be difficult to remember and share so we will configure a custom domain name.
