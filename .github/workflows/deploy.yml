@@ -1,3 +1,9 @@
+name: 'Deploy using AWS SSM Send-Command'
+
+on:
+push:
+branches: [main]
+
 jobs:
   deploy:
     name: Deploy
@@ -5,12 +11,16 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        # TODO Change your AWS region here!
         aws-region: us-east-1
+				
+        instance-ids: ${{ secrets.INSTANCE_ID  }}
+        comment: Deploy the main branch
+        working-directory: /home/ubuntu/agoraapi
+        command: deploy.sh
