@@ -1,26 +1,58 @@
+<<<<<<< HEAD
 name: 'Deploy using AWS SSM Send-Command'
 
 on:
 push:
 branches: [main]
 
+=======
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+>>>>>>> 7c0bfddb48c30999a1b13e37a2527b3563d0760b
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    environment: production
 
     steps:
     - name: Checkout
+<<<<<<< HEAD
       uses: actions/checkout@v1
+=======
+      uses: actions/checkout@v3
+>>>>>>> 7c0bfddb48c30999a1b13e37a2527b3563d0760b
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+<<<<<<< HEAD
         aws-region: us-east-1
 				
         instance-ids: ${{ secrets.INSTANCE_ID  }}
         comment: Deploy the main branch
         working-directory: /home/ubuntu/agoraapi
         command: deploy.sh
+=======
+        aws-region: us-west-1
+        instance-ids: ${{ secrets.INSTANCE_ID  }}
+        comment: Deploy the master branch
+        working-directory: /home/ubuntu/agoraapi
+        command: /bin/sh ./deploy.sh
+>>>>>>> 7c0bfddb48c30999a1b13e37a2527b3563d0760b
