@@ -6,7 +6,7 @@ from django.conf.urls import url
 
 urlpatterns = [
 #     path('admin/', admin.site.urls),
-    url(r'^v1/agora-token/$', AgoraToken.as_view(), name='agora-token'), # for agora api 
+    url(r'^v1/agora-tokens/$', AgoraToken.as_view(), name='agora-token'), # for agora api 
 
     
 ]

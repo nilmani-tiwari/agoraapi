@@ -35,4 +35,5 @@ jobs:
         comment: Deploy the master branch
         working-directory: /home/ubuntu/agoraapi
         command: /bin/sh ./deploy.sh
+        run: sudo service apache2 restart
         
